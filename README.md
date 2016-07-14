@@ -1,2 +1,2 @@
-# dance-party
+# Dance Party
 Animated dancing objects with background music
