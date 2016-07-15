@@ -83,12 +83,15 @@ create balls
 **************************************************************************************/
 
 .ball {
-    display: inline-block;
+    position: relative;
+    display: block;
     width: 300px;
     height: 300px;
     border-radius: 100%;
     position: relative;
     background: radial-gradient(circle at bottom, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+    float: right;
+    top: 200px;
 }
 
 .ball:before {
@@ -140,7 +143,9 @@ create balls
 }
 
 .ball.bubble {
-    background: radial-gradient(circle at 50% 55%, rgba(240, 245, 255, 0.9), rgba(240, 245, 255, 0.9) 40%, rgba(225, 238, 255, 0.8) 60%, rgba(43, 130, 255, 0.4));
+    background: radial-gradient(circle at 50% 55%,
+        rgba(240, 245, 255, 0.9), rgba(240, 245, 255, 0.9) 40%,
+        rgba(225, 238, 255, 0.7) 60%, rgba(243, 130, 255, 0.4));
     -webkit-animation: bubble-anim 2s ease-out infinite;
     animation: bubble-anim 2s ease-out infinite;
 }
@@ -150,14 +155,14 @@ create balls
     filter: blur(0);
     height: 80%;
     width: 40%;
-    background: radial-gradient(circle at 130% 130%, rgba(255, 255, 255, 0) 0, rgba(255, 255, 255, 0) 46%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.8) 58%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0) 100%);
+    background: radial-gradient(circle at 130% 130%, rgba(0, 0, 255, 0) 0, rgba(255, 255, 255, 0) 46%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.8) 58%, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 0) 100%);
     -webkit-transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg);
     transform: translateX(131%) translateY(58%) rotateZ(168deg) rotateX(10deg);
 }
 
 .ball.bubble:after {
     display: block;
-    background: radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 74%, white 80%, white 84%, rgba(255, 255, 255, 0) 100%);
+    background: radial-gradient(circle at 50% 80%, rgba(0, 0, 255, 0), rgba(255, 255, 255, 0) 74%, white 80%, white 84%, rgba(255, 255, 255, 0) 100%);
 }
 
 @-webkit-keyframes bubble-anim {
@@ -223,3 +228,60 @@ create balls
         transform: scale(1); 
     }
 }
+
+p{
+  color:black;
+  
+  width:420px;
+  height:250px;
+  
+  font-family: 'Oswald', sans-serif;
+  font-size:9em;
+  line-height:1;
+  margin:0;
+  padding:0;
+  
+  -webkit-transform: rotateX(25deg) rotateY(20deg) rotateZ(-3deg); 
+  transform: rotateX(25deg) rotateY(20deg) rotateZ(-3deg);  
+  
+  position:absolute;
+  left:50%;
+  top:50px;
+  margin-left:-180px;
+  
+  -webkit-animation: anim 3s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count:infinite;
+  
+  animation: anim 3s;
+  animation-timing-function: linear;
+  animation-iteration-count:infinite;
+}
+
+@-webkit-keyframes anim {
+    0%{text-shadow:-6px 4px 0px red;}
+    10% {text-shadow:4px -6px 0px green;}
+    20% {text-shadow:-9px 4px 0px blue;}
+    30% {text-shadow:4px -6px 0px yellow;}
+    40% {text-shadow:-8px 4px 0px orange;}
+    50% {text-shadow:4px 5px 0px purple;}
+    60% {text-shadow:-6px 4px 0px brown;}
+    70% {text-shadow:4px 7px 0px pink;}
+    80% {text-shadow:-9px -4px 0px lime;}
+    90% {text-shadow:4px -6px 0px cyan;}
+    100% {text-shadow:-9px 4px 0px teal;}
+} 
+
+@keyframes anim {
+    0%{text-shadow:-6px 4px 0px red;}
+    10% {text-shadow:4px -6px 0px green;}
+    20% {text-shadow:-9px 4px 0px blue;}
+    30% {text-shadow:4px -6px 0px yellow;}
+    40% {text-shadow:-8px 4px 0px orange;}
+    50% {text-shadow:4px 5px 0px purple;}
+    60% {text-shadow:-6px 4px 0px brown;}
+    70% {text-shadow:4px 7px 0px pink;}
+    80% {text-shadow:-9px -4px 0px lime;}
+    90% {text-shadow:4px -6px 0px cyan;}
+    100% {text-shadow:-9px 4px 0px teal;}
+} 
