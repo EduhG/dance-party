@@ -18,7 +18,7 @@ html, body {
     background-repeat: no-repeat;
 }
 
-.wrap {
+.cube-holder {
 	perspective: 800px;
 	perspective-origin: 50% 100px;
 }
@@ -74,5 +74,49 @@ html, body {
     position: absolute;
     height: 100%;
     width: 100%;
-    background: rgba(0,0,0, 0.3);
+    background: rgba(255,0,0, 0.2);
+    overflow: hidden
+}
+
+/**************************************************************************************
+create balls
+**************************************************************************************/
+
+.ball {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    position: relative;
+    background: radial-gradient(circle at bottom, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+}
+
+.ball:before {
+    content: "";
+    position: absolute;
+    top: 1%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border-radius: 100%;
+    background: radial-gradient(circle at top, white, rgba(255, 255, 255, 0) 58%);
+    -webkit-filter: blur(5px);
+    filter: blur(5px);
+    z-index: 2; 
+}
+
+.ball:after {
+    content: "";
+    position: absolute;
+    display: none;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+    border-radius: 100%;
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+    z-index: 2;
+    -webkit-transform: rotateZ(-30deg);
+    transform: rotateZ(-30deg);
 }
